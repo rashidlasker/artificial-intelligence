@@ -1,0 +1,46 @@
+""" +=========================================================================================+
+    ||                              Lab02: Dictionary Creator                                ||
+    ||                         Name: Rashid Lasker   Date: 9/9/14                            ||
+    +=========================================================================================+
+    
+    This program generates a dictionary of neighbors for all the words in the given text file
+    and stores it in a file.
+"""
+#######################################<BEGINNING OF PROGRAM>#######################################
+#def openGivenTextFile:
+   
+def main():
+   fileName = '/afs/csl.tjhsst.edu/students/2016/2016rlasker/Documents/words.txt'
+   file = open(fileName, 'r')
+   words1 = file.read()
+   file.close
+   list = words1.split()
+
+   Dict = dict()
+   for b in range(0, len(list)):
+      yourWord = list[b]
+      neighbors = []
+      for n in range(0, len(list)):
+         thisWord = list[n]
+         diffLetters = 0
+         for x in range(len(thisWord)):
+            if yourWord[x] != thisWord[x]:
+               diffLetters += 1
+            if diffLetters > 1:
+               break
+         if diffLetters == 1:
+            neighbors.append(thisWord)
+      Dict[yourWord] = neighbors
+   
+   newFileName = '/afs/csl.tjhsst.edu/students/2016/2016rlasker/Documents/oneChangeDict.txt'
+   import pickle
+   newFile = open(newFileName, 'wb')
+   pickle.dump(Dict, newFile)
+   newFile.close()
+   
+
+#===============================<GLOBAL CONSTANTS and GLOBAL IMPORTS================================
+from random import random, randint; from math import sqrt; from copy import deepcopy;
+from time import clock; START_TIME = clock(); main(); print('\n      +===<RUN TIME>===+');
+print('      |  %5.2f'%(clock()-START_TIME), 'seconds |'); print('      +================+')
+##########################################<END OF PROGRAM>##########################################
