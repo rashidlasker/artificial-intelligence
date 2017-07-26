@@ -1,2 +1,2 @@
-# artificial-intelligence
-This master repo contains all the code I wrote for an AI class I took in 2014-2015, my junior year of high school.
+# Artificial Intelligence '14-'15
+This master repo contains all the code I wrote for an AI class I took at TJHSST. The language was Python in a Linux environment. It's topics included graphs, heuristics, constraint solvers, game trees, genetic algorithms, learning, natural language, agents, and machine vision.
